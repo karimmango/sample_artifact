@@ -10,6 +10,7 @@ pipeline {
             }
         }
     }
+//testing the pipeline
     post {
         always {
             archiveArtifacts artifacts: 'sample', followSymlinks: false
