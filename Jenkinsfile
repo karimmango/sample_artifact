@@ -10,7 +10,7 @@ pipeline {
             }
         }
     }
-//karim 45212esting the pipeline
+//karim working 5212esting the pipeline
     post {
         always {
             archiveArtifacts artifacts: 'sample', followSymlinks: false
