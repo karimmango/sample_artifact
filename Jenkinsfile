@@ -25,11 +25,11 @@ pipeline {
                 }
             }
             
-        }
         steps {
             build job: 'sample-deploy', parameters: [string(name: 'DEPLOY_TO', value: 'production'),
                                                  string(name: 'upstreamJobName', value: BRANCH_NAME)]
         }
+        
             
     }
 
