@@ -34,7 +34,7 @@ pipeline {
             
         steps {
             build job: 'sample', parameters: [string(name: 'DEPLOY_TO', value: 'qa'),
-                                                 string(name: 'upstreamJobName', value: BRANCH_NAME)]
+                                                 string(name: 'upstreamJobName', value: 'main')]
         }
         
         
