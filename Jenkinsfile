@@ -26,7 +26,7 @@ pipeline {
             }
             
         steps {
-            build job: 'sample-deploy', parameters: [string(name: 'DEPLOY_TO', value: 'qa'),
+            build job: 'sample_artifact', parameters: [string(name: 'DEPLOY_TO', value: 'qa'),
                                                  string(name: 'upstreamJobName', value: BRANCH_NAME)]
         }
         
@@ -39,7 +39,7 @@ pipeline {
           }
 
           steps {
-            build job: 'sample-deploy', parameters: [string(name: 'DEPLOY_TO', value: 'production'),
+            build job: 'sample_artifact', parameters: [string(name: 'DEPLOY_TO', value: 'production'),
                                                      string(name: 'upstreamJobName', value: BRANCH_NAME)]
           }
     
