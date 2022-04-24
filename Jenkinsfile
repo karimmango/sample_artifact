@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    parameters {
+    choice choices: ['qa', 'production','staging'], description: 'Select environment for deployment', name: 'DEPLOY_TO'
+    string(name: 'upstreamJobName',
+          defaultValue: 'main',
+          description: 'The name of the job the triggering upstream build'
+    )
+  }
     tools {
        go 'go-1.17.8'
     }
