@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-    choice choices: ['qa', 'production','staging'], description: 'Select environment for deployment', name: 'DEPLOY_TO'
+    choice choices: ['qa', 'production','staging', 'cloud'], description: 'Select environment for deployment', name: 'DEPLOY_TO'
     string(name: 'upstreamJobName',
           defaultValue: 'main',
           description: 'The name of the job the triggering upstream build'
@@ -46,7 +46,7 @@ pipeline {
           }
 
           steps {
-            build job: 'sample', parameters: [string(name: 'DEPLOY_TO', value: 'production'),
+            build job: 'sample', parameters: [string(name: 'DEPLOY_TO', value: 'cloud'),
                                                      string(name: 'upstreamJobName', value: BRANCH_NAME)]
           }
     
